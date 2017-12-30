@@ -1,18 +1,18 @@
 set editing-mode vi
 set -o vi
 
-alias dot='/usr/bin/git --git-dir=/home/kchuangk/.dotfiles/ --work-tree=/home/kchuangk'
+alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 if [ -z "$VIRTUAL_ENV" ]; then
     read -p "Virtual Environment? " -n 1 -r
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
-        export VIRTUAL_ENV=/home/kchuangk/.pyenv
+        export VIRTUAL_ENV=$HOME/.pyenv
     fi
 fi
 
 if [[ -n "$TMUX" ]]; then
-    tmux set-environment VIRTUAL_ENV /home/kchuangk/.pyenv
+    tmux set-environment VIRTUAL_ENV $HOME/.pyenv
 fi
 
 if [ -n "$VIRTUAL_ENV" ]; then
