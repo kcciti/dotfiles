@@ -1,0 +1,6 @@
+[Unit]
+Description=Timer to run GIT for Documents directory daily
+
+[Service]
+Type=simple
+ExecStart=/home/kchuangk/Documents/.git/gitbackup.sh
