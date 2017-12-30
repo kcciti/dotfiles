@@ -3,4 +3,4 @@ Description=Delete vim backup files (*~)
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/find $HOME -name *~ -type f -delete
+ExecStart=/usr/bin/find %h -name '*~' -type f -delete

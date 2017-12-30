@@ -3,5 +3,5 @@ Description=Daily backup of dotfiles to GitHub
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME push origin master
+ExecStart=/usr/bin/git --git-dir=%h/.dotfiles/ --work-tree=%h push origin master
 

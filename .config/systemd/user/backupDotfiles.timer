@@ -2,7 +2,7 @@
 Description=Daily backup of dotfiles to GitHub
 
 [Timer]
-OnCalendar=daily
+OnCalendar=minutely
 Persistent=true
 
 [Install]
