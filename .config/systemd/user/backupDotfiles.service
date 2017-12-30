@@ -1,0 +1,7 @@
+[Unit]
+Description=Daily backup of dotfiles to GitHub
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/git --git-dir=/home/kchuangk/.dotfiles/ --work-tree=/home/kchuangk push origin master
+
