@@ -47,5 +47,3 @@ nmap r <C-r>
 nmap I <C-d>
 nmap U <C-u>
 nmap 4 $
-
-" simply edit test
