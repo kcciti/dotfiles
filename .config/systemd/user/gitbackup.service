@@ -3,4 +3,4 @@ Description=Timer to run GIT for Documents directory daily
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/git --git-dir=%h/Documents/.git --work-tree=%h/Documents commit -a -m "Automated Commit $$(date)"
+ExecStart=/usr/bin/git --git-dir=%h/Documents/.git --work-tree=%h/Documents commit -a -m "Automated Commit" 
