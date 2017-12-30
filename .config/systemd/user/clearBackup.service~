@@ -1,6 +1,0 @@
-[Unit]
-Description=Delete vim backup files (*~)
-
-[Service]
-Type=simple
-ExecStart="find /home/kchuangk -name '*~' -type f -delete"
