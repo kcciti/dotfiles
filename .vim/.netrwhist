@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/kchuangk/.config/systemd/user'
+let g:netrw_dirhist_2='/home/kchuangk/.vim/bundle/vim-slime'
+let g:netrw_dirhist_3='/home/kchuangk/.config'
+let g:netrw_dirhist_4='/home/kchuangk/.config/systemd'
+let g:netrw_dirhist_5='/home/kchuangk/.config/systemd/user'
+let g:netrw_dirhist_6='/home/kchuangk/Documents/.git'
+let g:netrw_dirhist_7='/home/kchuangk/Documents/.git/branches'
+let g:netrw_dirhist_8='/home/kchuangk/Documents/.git'
+let g:netrw_dirhist_9='/home/kchuangk/python/cta'
