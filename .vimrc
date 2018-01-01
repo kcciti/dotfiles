@@ -39,6 +39,7 @@ let g:pymode_python = 'python3'
 let g:pymode_lint_ignore = ["E302", "E501","E301", "E305"]
 let g:pymode_lint_checkers = ['pep8']
 let g:pymode_options_max_line_length = 75
+let g:pymode_lint_on_write = 0
 set wrap
 
 let g:slime_target = "tmux"
@@ -73,14 +74,15 @@ function! Smart_TabComplete()
   if (strlen(substr)==0)                          " nothing to match on empty string
     return "\<tab>"
   endif
-  let has_period = match(substr, '\.') != -1      " position of period, if any
-  let has_slash = match(substr, '\/') != -1       " position of slash, if any
-  if (!has_period && !has_slash)
-    return "\<C-X>\<C-P>"                         " existing text matching
-  elseif ( has_slash )
-    return "\<C-X>\<C-F>"                         " file matching
-  else
-    return "\<C-X>\<C-O>"                         " plugin matching
-  endif
+"   let has_period = match(substr, '\.') != -1      " position of period, if any
+"   let has_slash = match(substr, '\/') != -1       " position of slash, if any
+"   if (!has_period && !has_slash)
+"     return "\<C-X>\<C-P>"                         " existing text matching
+"   elseif ( has_slash )
+"     return "\<C-X>\<C-F>"                         " file matching
+"   else
+"     return "\<C-X>\<C-O>"                         " plugin matching
+"   endif
+  return "\<C-N>"
 endfunction
 inoremap <tab> <c-r>=Smart_TabComplete()<CR>

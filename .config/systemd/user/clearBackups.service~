@@ -1,6 +1,0 @@
-[Unit]
-Description=Delete vim backup files (*~)
-
-[Service]
-Type=simple
-ExecStart=/usr/bin/find $HOME -name '*~' -type f -delete
