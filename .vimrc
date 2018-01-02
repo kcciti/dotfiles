@@ -36,11 +36,9 @@ syntax on
 " pymode settings
 let g:pymode = 1
 let g:pymode_python = 'python3'
-let g:pymode_lint_ignore = ["E302", "E501","E301", "E305"]
-let g:pymode_lint_checkers = ['pep8']
-let g:pymode_options_max_line_length = 75
+" let g:pymode_lint_ignore = ["E302", "E501","E301", "E305"]
+" let g:pymode_lint_checkers = ['pep8']
 let g:pymode_lint_on_write = 0
-set wrap
 
 let g:slime_target = "tmux"
 let g:slime_python_ipython = 1
@@ -59,6 +57,7 @@ nmap r <C-r>
 nmap I <C-d>
 nmap U <C-u>
 nmap z za 
+set noeb vb t_vb=
 nmap <leader>f :PymodeLintAuto<CR>
 " remap help files to quit with q
 autocmd FileType help noremap <buffer> q :q<cr>
