@@ -1,5 +1,6 @@
 set editing-mode vi
 set -o vi
+stty -ixon
 
 if [[ -z "$TMUX" ]]; then
         tmux list-sessions | grep -E -v '\(attached\)$' | while IFS='\n' read line; do

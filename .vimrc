@@ -46,8 +46,10 @@ let g:pymode = 0
 " let g:ycm_autoclose_preview_window_after_insertion = 1
 " let g:ycm_autoclose_preview_window_after_completion = 1
 
-" let g:jedi#completions_command = ''
-" let g:jedi#completions_command = '' to disable jedi
+map <leader>d :YcmCompleter GoToDefinition<CR>
+
+
+let g:jedi#completions_command = '' " comment to enable jedi
 " let g:jedi#completions_command = "<C-N>"
 
 let g:slime_target = "tmux"
@@ -55,8 +57,11 @@ let g:slime_python_ipython = 1
 let g:slime_no_remapping = 1
 
 let g:slime_default_config = {"socket_name":split($TMUX, ",")[0], "target_pane": ":.1"}
-xmap <leader>s <Plug>SlimeRegionSend
-nmap <leader>s <Plug>SlimeParagraphSend
+"nmap <leader>s "zyy:SlimeSend1 <C-r>z<CR>
+nmap <C-F> :SlimeSendCurrentLine<CR>
+imap <C-F> <ESC>:SlimeSendCurrentLine<CR>
+xmap <C-F> <Plug>SlimeRegionSend
+nmap <C-F><C-F> <Plug>SlimeParagraphSend
 
 " let g:solarized_template=256
 set t_Co=16
@@ -71,7 +76,7 @@ set noeb vb t_vb=
 " nmap <leader>f :PymodeLintAuto<CR>
 
 " vim-Autopep8 customizations
-let g:autopep8_ignore="E302,E301"
+" let g:autopep8_ignore="E302,E301"
 let g:autopep8_aggressive=2
 let g:autopep8_disable_show_diff= 1
 autocmd FileType python map <buffer> <leader>f :call Autopep8()<CR>
