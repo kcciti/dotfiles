@@ -1,18 +1,18 @@
 class disp():
     def vert():
-        pd.set_option('max_columns', 6, 'max_colwidth', 20, 'max_rows', 25)
+        pd.set_option('max_columns', 6, 'max_colwidth', 5, 'max_rows', 25)
         pd.options.display.width = 80
 
     def horz():
-        pd.set_option('max_columns', 13, 'max_colwidth', 2020202020202020202020202020202020202020, 'max_rows', 5)
+        pd.set_option('max_columns', 20, 'max_colwidth', 10, 'max_rows', 5)
         pd.options.display.width = 160
 
     def full():
         pd.set_option(
             'max_columns',
-            13,
-            'max_colwidth',
             20,
+            'max_colwidth',
+            10,
             'max_rows',
             30)
         pd.options.display.width = 160
