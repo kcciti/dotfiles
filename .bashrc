@@ -1,5 +1,5 @@
 source /usr/share/defaults/etc/profile
-export EDITOR = 'vim'
+export EDITOR='vim'
 set editing-mode vi
 set -o vi
 stty -ixon
