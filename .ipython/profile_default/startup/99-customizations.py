@@ -28,3 +28,15 @@ class disp():
 
     def rows(x):
         pd.options.display.max_rows = x
+
+# This function creates images of tree models using pydot
+def print_tree(estimator, features, class_names=None, filled=True):
+    tree = estimator
+    names = features
+    color = filled
+    classn = class_names
+                        
+    dot_data = StringIO()
+    export_graphviz(estimator, out_file=dot_data, feature_names=features, class_names=classn, filled=filled)
+    graph = pydot.graph_from_dot_data(dot_data.getvalue())
+    return(graph)
