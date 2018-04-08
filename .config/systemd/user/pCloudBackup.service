@@ -1,0 +1,7 @@
+[Unit]
+Description=pCloud Backup
+
+[Service]
+Type=simple
+ExecStart=%h/scripts/pCloud_borg_backup.sh
+
