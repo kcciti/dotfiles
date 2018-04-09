@@ -4,4 +4,3 @@ Description=Daily backup of dotfiles to GitHub
 [Service]
 Type=simple
 ExecStart=/usr/bin/git --git-dir=%h/.dotfiles/ --work-tree=%h commit -a -m "Automated Commit"
-

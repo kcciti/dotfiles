@@ -18,9 +18,9 @@ if [ -z "$VIRTUAL_ENV" ]; then
     fi
 fi
 
-if [[ -n "$TMUX" ]]; then
-    tmux set-environment VIRTUAL_ENV $HOME/.pyenv
-fi
+#if [[ -n "$TMUX" ]]; then
+#    tmux set-environment VIRTUAL_ENV $HOME/.pyenv
+#fi
 
 if [ -n "$VIRTUAL_ENV" ]; then
     source $VIRTUAL_ENV/bin/activate;

@@ -1,6 +1,0 @@
-[Unit]
-Description=Delete vim backup files (.*.swp)
-
-[Service]
-Type=simple
-ExecStart=/usr/bin/find %h -name '.*.swp' -type f -delete
