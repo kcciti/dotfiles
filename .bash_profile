@@ -1,4 +1,6 @@
 set editing-mode vi
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias md5dir='$HOME/scripts/md5dir.sh'
 set -o vi
 stty -ixon
 
