@@ -55,7 +55,7 @@ let g:slime_target = "tmux"
 let g:slime_python_ipython = 1
 let g:slime_no_remapping = 1
 
-" let g:slime_default_config = {"socket_name":split($TMUX, ",")[0], "target_pane": ":.1"}
+let g:slime_default_config = {"socket_name":split($TMUX, ",")[0], "target_pane": ":.1"}
 nmap <leader>s "zyy:SlimeSend1 <C-r>z<CR>
 nmap <C-F> :SlimeSendCurrentLine<CR>
 imap <C-F> <ESC>:SlimeSendCurrentLine<CR>
