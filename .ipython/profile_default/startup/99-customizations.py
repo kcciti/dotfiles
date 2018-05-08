@@ -40,3 +40,4 @@ def print_tree(estimator, features, class_names=None, filled=True):
     export_graphviz(estimator, out_file=dot_data, feature_names=features, class_names=classn, filled=filled)
     graph = pydot.graph_from_dot_data(dot_data.getvalue())
     return(graph)
+

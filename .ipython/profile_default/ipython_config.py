@@ -598,4 +598,3 @@
 #  starts.
 #c.StoreMagics.autorestore = False
 c.TerminalInteractiveShell.editing_mode = 'vi'
-c.InteractiveSheelApp.exec_lines = ['import matplotlib.pyplot as plt','plt.style.use(\'seaborn-dark\')']
