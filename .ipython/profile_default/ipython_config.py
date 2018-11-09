@@ -23,10 +23,10 @@
 
 ## Run the file referenced by the PYTHONSTARTUP environment variable at IPython
 #  startup.
-# c.InteractiveShellApp.exec_PYTHONSTARTUP = True
+#c.InteractiveShellApp.exec_PYTHONSTARTUP = True
 
 ## List of files to run at IPython startup.
-# c.InteractiveShellApp.exec_files = []
+#c.InteractiveShellApp.exec_files = []
 
 ## lines of code to run at IPython startup.
 #c.InteractiveShellApp.exec_lines = []
@@ -150,6 +150,9 @@
 #  user input before code is run.
 #c.InteractiveShell.ast_transformers = []
 
+## Automatically run await statement in the top level repl.
+#c.InteractiveShell.autoawait = True
+
 ## Make IPython automatically call any callable object even if you didn't type
 #  explicit parentheses. For example, 'str 43' becomes 'str(43)' automatically.
 #  The value can be '0' to disable the feature, '1' for 'smart' autocall, where
@@ -165,7 +168,7 @@
 #c.InteractiveShell.automagic = True
 
 ## The part of the banner to be printed before the profile
-#c.InteractiveShell.banner1 = "Python 3.5.4 (default, Aug 13 2017, 21:43:04) \nType 'copyright', 'credits' or 'license' for more information\nIPython 6.2.1 -- An enhanced Interactive Python. Type '?' for help.\n"
+#c.InteractiveShell.banner1 = "Python 3.6.6 (default, Oct  7 2018, 22:15:25) \nType 'copyright', 'credits' or 'license' for more information\nIPython 7.1.1 -- An enhanced Interactive Python. Type '?' for help.\n"
 
 ## The part of the banner to be printed after the profile
 #c.InteractiveShell.banner2 = ''
@@ -219,6 +222,10 @@
 ## Start logging to the default log file in overwrite mode. Use `logappend` to
 #  specify a log file to **append** logs to.
 #c.InteractiveShell.logstart = False
+
+## Select the loop runner that will be used to execute top-level asynchronous
+#  code
+#c.InteractiveShell.loop_runner = 'IPython.core.interactiveshell._asyncio_runner'
 
 ## 
 #c.InteractiveShell.object_info_string_level = 0
@@ -285,7 +292,10 @@
 #c.TerminalInteractiveShell.editing_mode = 'emacs'
 
 ## Set the editor used by IPython (default to $EDITOR/vi/notepad).
-#c.TerminalInteractiveShell.editor = 'vi'
+#c.TerminalInteractiveShell.editor = 'vim'
+
+## Allows to enable/disable the prompt toolkit history search
+#c.TerminalInteractiveShell.enable_history_search = True
 
 ## Enable vi (v) or Emacs (C-X C-E) shortcuts to open an external editor. This is
 #  in addition to the F2 binding, which is always enabled.
@@ -299,9 +309,8 @@
 ## Highlight matching brackets.
 #c.TerminalInteractiveShell.highlight_matching_brackets = True
 
-## The name or class of a Pygments style to use for syntax
-#         highlighting: 
-#  vim, monokai, xcode, trac, native, default, algol, bw, perldoc, lovelace, colorful, abap, paraiso-dark, paraiso-light, manni, pastie, emacs, rrt, borland, friendly, fruity, tango, arduino, igor, rainbow_dash, autumn, vs, murphy, algol_nu
+## The name or class of a Pygments style to use for syntax highlighting. To see
+#  available styles, run `pygmentize -L styles`.
 #c.TerminalInteractiveShell.highlighting_style = traitlets.Undefined
 
 ## Override highlighting format for specific tokens
@@ -351,7 +360,7 @@
 ## Options for configuring the SQLite connection
 #  
 #  These options are passed as keyword args to sqlite3.connect when establishing
-#  database conenctions.
+#  database connections.
 #c.HistoryAccessor.connection_options = {}
 
 ## enable the SQLite history
@@ -515,9 +524,8 @@
 #  hurt performance by preventing jedi to build its cache.
 #c.Completer.jedi_compute_type_timeout = 400
 
-## Experimental: Use Jedi to generate autocompletions. Default to True if jedi is
-#  installed
-#c.Completer.use_jedi = True
+## Experimental: Use Jedi to generate autocompletions. Off by default.
+#c.Completer.use_jedi = False
 
 #------------------------------------------------------------------------------
 # IPCompleter(Completer) configuration
@@ -597,4 +605,3 @@
 ## If True, any %store-d variables will be automatically restored when IPython
 #  starts.
 #c.StoreMagics.autorestore = False
-c.TerminalInteractiveShell.editing_mode = 'vi'

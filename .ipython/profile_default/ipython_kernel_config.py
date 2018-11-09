@@ -185,11 +185,14 @@
 #  HANDLE of the parent process, otherwise it is simply boolean.
 #c.IPKernelApp.parent_handle = 0
 
+## Only send stdout/stderr to output stream
+#c.IPKernelApp.quiet = True
+
 #------------------------------------------------------------------------------
 # Kernel(SingletonConfigurable) configuration
 #------------------------------------------------------------------------------
 
-## Whether to use appnope for compatiblity with OS X App Nap.
+## Whether to use appnope for compatibility with OS X App Nap.
 #  
 #  Only affects OS X >= 10.9.
 #c.Kernel._darwin_app_nap = True
@@ -198,14 +201,24 @@
 #c.Kernel._execute_sleep = 0.0005
 
 ## 
-#c.Kernel._poll_interval = 0.05
+#c.Kernel._poll_interval = 0.01
+
+## time (in seconds) to wait for messages to arrive when aborting queued requests
+#  after an error.
+#  
+#  Requests that arrive within this window after an error will be cancelled.
+#  
+#  Increase in the event of unusually slow network causing significant delays,
+#  which can manifest as e.g. "Run all" in a notebook aborting some, but not all,
+#  messages after an error.
+#c.Kernel.stop_on_error_timeout = 0.1
 
 #------------------------------------------------------------------------------
 # IPythonKernel(Kernel) configuration
 #------------------------------------------------------------------------------
 
 ## 
-#c.IPythonKernel.help_links = [{'text': 'Python Reference', 'url': 'https://docs.python.org/3.5'}, {'text': 'IPython Reference', 'url': 'https://ipython.org/documentation.html'}, {'text': 'NumPy Reference', 'url': 'https://docs.scipy.org/doc/numpy/reference/'}, {'text': 'SciPy Reference', 'url': 'https://docs.scipy.org/doc/scipy/reference/'}, {'text': 'Matplotlib Reference', 'url': 'https://matplotlib.org/contents.html'}, {'text': 'SymPy Reference', 'url': 'http://docs.sympy.org/latest/index.html'}, {'text': 'pandas Reference', 'url': 'https://pandas.pydata.org/pandas-docs/stable/'}]
+#c.IPythonKernel.help_links = [{'text': 'Python Reference', 'url': 'https://docs.python.org/3.6'}, {'text': 'IPython Reference', 'url': 'https://ipython.org/documentation.html'}, {'text': 'NumPy Reference', 'url': 'https://docs.scipy.org/doc/numpy/reference/'}, {'text': 'SciPy Reference', 'url': 'https://docs.scipy.org/doc/scipy/reference/'}, {'text': 'Matplotlib Reference', 'url': 'https://matplotlib.org/contents.html'}, {'text': 'SymPy Reference', 'url': 'http://docs.sympy.org/latest/index.html'}, {'text': 'pandas Reference', 'url': 'https://pandas.pydata.org/pandas-docs/stable/'}]
 
 ## Set this flag to False to deactivate the use of experimental IPython
 #  completion APIs.
@@ -225,6 +238,9 @@
 #  user input before code is run.
 #c.InteractiveShell.ast_transformers = []
 
+## Automatically run await statement in the top level repl.
+#c.InteractiveShell.autoawait = True
+
 ## Make IPython automatically call any callable object even if you didn't type
 #  explicit parentheses. For example, 'str 43' becomes 'str(43)' automatically.
 #  The value can be '0' to disable the feature, '1' for 'smart' autocall, where
@@ -240,7 +256,7 @@
 #c.InteractiveShell.automagic = True
 
 ## The part of the banner to be printed before the profile
-#c.InteractiveShell.banner1 = "Python 3.5.4 (default, Aug 13 2017, 21:43:04) \nType 'copyright', 'credits' or 'license' for more information\nIPython 6.2.1 -- An enhanced Interactive Python. Type '?' for help.\n"
+#c.InteractiveShell.banner1 = "Python 3.6.6 (default, Oct  7 2018, 22:15:25) \nType 'copyright', 'credits' or 'license' for more information\nIPython 7.1.1 -- An enhanced Interactive Python. Type '?' for help.\n"
 
 ## The part of the banner to be printed after the profile
 #c.InteractiveShell.banner2 = ''
@@ -294,6 +310,10 @@
 ## Start logging to the default log file in overwrite mode. Use `logappend` to
 #  specify a log file to **append** logs to.
 #c.InteractiveShell.logstart = False
+
+## Select the loop runner that will be used to execute top-level asynchronous
+#  code
+#c.InteractiveShell.loop_runner = 'IPython.core.interactiveshell._asyncio_runner'
 
 ## 
 #c.InteractiveShell.object_info_string_level = 0
