@@ -5,6 +5,7 @@ set -o vi
 stty -ixon
 eval `dircolors $HOME/.dir_colors/dircolors`
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias md5dir='$HOME/scripts/md5dir.sh'
+# alias md5dir='$HOME/scripts/md5dir.sh'
+alias grep='grep -P'
 source ~/.pyenv/bin/activate
 tmux
