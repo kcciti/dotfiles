@@ -1,8 +1,8 @@
 {
-  "NotebookApp": {
-    "nbserver_extensions": {
-      "jupyter_nbextensions_configurator": true,
-      "jlstaticserve": true
+    "NotebookApp": {
+        "nbserver_extensions": {
+            "jupyter_nbextensions_configurator": true,
+            "jlstaticserve": true
+        }
     }
-  }
 }
