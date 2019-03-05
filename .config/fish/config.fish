@@ -10,14 +10,12 @@ set -x LS_COLORS "no=00;38;5;244:rs=0:di=00;38;5;33:ln=00;38;5;37:mh=00:pi=48;5;
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias grep='grep -P --color=always'
 alias less='less -r'
-# The next line updates PATH for the Google Cloud SDK.
 if [ -f '/opt/google-cloud-sdk/path.fish.inc' ]; . '/opt/google-cloud-sdk/path.fish.inc'; end
 source ~/.pyenv/bin/activate.fish
 if not set -q TMUX
     exec tmux
 end
 
+
 # The next line updates PATH for the Google Cloud SDK.
-# if [ -f '/home/kchuangk/Documents/Classes/W266 - Natural Language Processing/google-cloud-sdk/path.fish.inc' ]; . '/home/kchuangk/Documents/Classes/W266 - Natural Language Processing/google-cloud-sdk/path.fish.inc'; end
-
-
+#if [ -f '/home/kchuangk/Documents/Classes/W261 - Machine Learning at Scale/google-cloud-sdk/google-cloud-sdk/path.fish.inc' ]; . '/home/kchuangk/Documents/Classes/W261 - Machine Learning at Scale/google-cloud-sdk/google-cloud-sdk/path.fish.inc'; end
