@@ -19,3 +19,6 @@ end
 
 # The next line updates PATH for the Google Cloud SDK.
 #if [ -f '/home/kchuangk/Documents/Classes/W261 - Machine Learning at Scale/google-cloud-sdk/google-cloud-sdk/path.fish.inc' ]; . '/home/kchuangk/Documents/Classes/W261 - Machine Learning at Scale/google-cloud-sdk/google-cloud-sdk/path.fish.inc'; end
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/kchuangk/Documents/Classes/W261 - Machine Learning at Scale/google-cloud-sdk/path.fish.inc' ]; . '/home/kchuangk/Documents/Classes/W261 - Machine Learning at Scale/google-cloud-sdk/path.fish.inc'; end
