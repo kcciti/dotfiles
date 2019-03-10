@@ -3,7 +3,6 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias md5dir='$HOME/scripts/md5dir.sh'
 set -o vi
 stty -ixon
-
 if [[ -z "$TMUX" ]]; then
         tmux list-sessions | grep -E -v '\(attached\)$' | while IFS='\n' read line; do
             tmux kill-session -t "${line%%:*}"
