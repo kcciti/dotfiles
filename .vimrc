@@ -33,6 +33,7 @@ execute pathogen#helptags()
 filetype plugin indent on
 syntax on
 
+
 " pymode settings
 " let g:pymode = 0 
 " let g:pymode_python = 'python3'
