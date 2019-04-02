@@ -108,7 +108,8 @@
   \savebox{\makecvtitledetailsbox}{%
     \addressfont\color{color2}%
     \begin{tabular}[b]{@{}r@{}}%
-      \ifthenelse{\isundefined{\@addressstreet}}{}{\makenewline\addresssymbol\@addressstreet%
+      \ifthenelse{\isundefined{\@addressstreet}}{}{\makenewline\addresssymbol\@addressstreet
+            \ifthenelse{\isundefined{\@addressstreettwo}}{}{\makenewline\addresssymbol\@addressstreettwo}%
         \ifthenelse{\equal{\@addresscity}{}}{}{\makenewline\@addresscity}}% if \addresstreet is defined, \addresscity will always be defined but could be empty
       \ifthenelse{\isundefined{\@mobile}}{}{\makenewline\mobilesymbol\@mobile}%
       \ifthenelse{\isundefined{\@phone}}{}{\makenewline\phonesymbol\@phone}%

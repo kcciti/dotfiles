@@ -211,7 +211,7 @@
 \newcommand*{\firstname}[1]{\def\@firstname{#1}}
 \newcommand*{\familyname}[1]{\def\@familyname{#1}}
 \renewcommand*{\title}[1]{\def\@title{#1}}
-\newcommand*{\address}[2]{\def\@addressstreet{#1}\def\@addresscity{#2}}
+\newcommand*{\address}[3]{\def\@addressstreet{#1}\def\@addressstreettwo{#2}\def\@addresscity{#3}}
 \newcommand*{\mobile}[1]{\def\@mobile{#1}}
 \newcommand*{\phone}[1]{\def\@phone{#1}}
 \newcommand*{\fax}[1]{\def\@fax{#1}}
