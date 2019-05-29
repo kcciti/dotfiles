@@ -214,7 +214,8 @@
   \cvitem[#1]{#2}{%
     {\bfseries#3}%
     \ifthenelse{\equal{#4}{}}{}{{\hfill#4}}%
-    \ifthenelse{\equal{#5}{}}{}{{\newline\itshape#5}}%
+%    \ifthenelse{\equal{#5}{}}{}{{\newline\itshape#5}}%
+    \ifthenelse{\equal{#5}{}}{}{{\newline#5}}%
     \ifthenelse{\equal{#6}{}}{}{{\newline#6}}%
     \ifthenelse{\equal{#7}{}}{}{, {\slshape#7}}%
     \ifthenelse{\equal{#8}{}}{}{{\newline#8}}%
