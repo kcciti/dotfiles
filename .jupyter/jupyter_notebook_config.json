@@ -2,7 +2,6 @@
   "NotebookApp": {
     "nbserver_extensions": {
       "jupyter_nbextensions_configurator": true,
-      "jlstaticserve": true,
       "jupyterlab_git": true,
       "jupyter_tensorboard": true
     }

@@ -2,7 +2,6 @@
   "load_extensions": {
     "nbextensions_configurator/config_menu/main": true,
     "contrib_nbextensions_help_item/main": true,
-    "vim_binding/vim_binding": true,
     "autosavetime/main": true,
     "export_embedded/main": true,
     "codefolding/main": true,
@@ -10,8 +9,7 @@
     "execute_time/ExecuteTime": true,
     "code_prettify/code_prettify": true,
     "toggle_all_line_numbers/main": true,
-    "varInspector/main": true,
-    "vim_binding/vim_binding.": true
+    "varInspector/main": true
   },
   "varInspector": {
     "window_display": true
