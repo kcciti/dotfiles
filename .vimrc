@@ -67,7 +67,7 @@ nmap <C-F><C-F> <Plug>SlimeParagraphSend
 " let g:solarized_template=256
 set t_Co=16
 set background=dark
-colorscheme solarized
+colorscheme koehler
 
 nmap r <C-r>
 nmap I <C-d>
@@ -84,3 +84,6 @@ autocmd FileType python map <buffer> <leader>f :call Autopep8()<CR>
 
 " remap help files to quit with q
 autocmd FileType help noremap <buffer> q :q<cr>
+
+
+set paste
