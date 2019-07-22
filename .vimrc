@@ -67,7 +67,7 @@ nmap <C-F><C-F> <Plug>SlimeParagraphSend
 " let g:solarized_template=256
 set t_Co=16
 set background=dark
-colorscheme koehler
+colorscheme solarized 
 
 nmap r <C-r>
 nmap I <C-d>
