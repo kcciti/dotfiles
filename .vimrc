@@ -1,3 +1,6 @@
+" setting the shell so jedi-vim works
+set shell=/bin/bash
+
 " enable syntax highlighting
 syntax enable
 
