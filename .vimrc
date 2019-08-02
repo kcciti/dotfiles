@@ -36,57 +36,55 @@ execute pathogen#helptags()
 filetype plugin indent on
 syntax on
 
-
-" pymode settings
-" let g:pymode = 0 
-" let g:pymode_python = 'python3'
-" let g:pymode_lint_ignore = ["E302", "E501","E301", "E305"]
-" let g:pymode_lint_checkers = ['pep8']
-" let g:pymode_lint_on_write = 0
-" let g:pymode_rope = 0
-
-" disable youcompleteme
-" let g:loaded_youcompleteme = 1
-" let g:ycm_autoclose_preview_window_after_insertion = 1
-" let g:ycm_autoclose_preview_window_after_completion = 1
-
-map <leader>d :YcmCompleter GoToDefinition<CR>
-
-
-" let g:jedi#completions_command = '' " comment to enable jedi
-
-let g:slime_target = "tmux"
-let g:slime_python_ipython = 1
-let g:slime_no_remapping = 1
-if exists('$TMUX')
-        let g:slime_default_config = {"socket_name":split($TMUX, ",")[0], "target_pane": ":.1"}
-endif
-nmap <leader>s "zyy:SlimeSend1 <C-r>z<CR>
-nmap <C-F> :SlimeSendCurrentLine<CR>
-imap <C-F> <ESC>:SlimeSendCurrentLine<CR>
-xmap <C-F> <Plug>SlimeRegionSend
-nmap <C-F><C-F> <Plug>SlimeParagraphSend
+set mouse=a
 
 " let g:solarized_template=256
 set t_Co=16
 set background=dark
 colorscheme solarized 
 
-nmap r <C-r>
-nmap I <C-d>
-nmap U <C-u>
-" nmap z za 
-" set noeb vb t_vb=
-" nmap <leader>f :PymodeLintAuto<CR>
+" Use TAB to complete when typing words, else inserts TABs as usual.  Uses
+" dictionary, source files, and completor to find matching words to complete.
+
+" Note: usual completion is on <C-n> but more trouble to press all the time.
+" Never type the same word twice and maybe learn a new spellings!
+" Use the Linux dictionary when spelling is in doubt.
+function! Tab_Or_Complete() abort
+  " If completor is already open the `tab` cycles through suggested completions.
+  if pumvisible()
+    return "\<C-N>"
+  " If completor is not open and we are in the middle of typing a word then
+  " `tab` opens completor menu.
+  elseif col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^[[:keyword:][:ident:]]'
+    return "\<C-R>=completor#do('complete')\<CR>"
+  else
+    " If we aren't typing a word and we press `tab` simply do the normal `tab`
+    " action.
+    return "\<Tab>"
+  endif
+endfunction
+
+" Use `tab` key to select completions.  Default is arrow keys.
+" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Use tab to trigger auto completion.  Default suggests completions as you type.
+let g:completor_auto_trigger = 0
+inoremap <expr> <Tab> Tab_Or_Complete()
 
 " vim-Autopep8 customizations
 " let g:autopep8_ignore="E302,E301"
 let g:autopep8_aggressive=2
 let g:autopep8_disable_show_diff= 1
+
 autocmd FileType python map <buffer> <leader>f :call Autopep8()<CR>
 
 " remap help files to quit with q
 autocmd FileType help noremap <buffer> q :q<cr>
 
+" set paste
 
-set paste
+
