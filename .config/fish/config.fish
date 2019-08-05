@@ -1,6 +1,8 @@
 #source /usr/share/defaults/etc/profile
 export EDITOR='vim'
 set -gx EDITOR vim
+set -gx PATH \$PATH /home/kchuangk/.pyenv/bin:/sbin:/bin:/usr/sbin:/usr/bin:/snap/bin
+set --export LANG en_US.UTF-8
 set --export VIRTUAL_ENV_DISABLE_PROMPT 1
 set --export UID (id -u)
 set --export GID (id -g)

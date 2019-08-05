@@ -2,7 +2,8 @@
 Description=pCloud Backup
 
 [Timer]
-OnCalendar=*-*-* 12:30:00
+OnBootSec = 0min
+OnUnitActiveSec=5min
 Persistent=true
 
 [Install]
