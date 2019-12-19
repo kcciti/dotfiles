@@ -1,0 +1,9 @@
+[Unit]
+Description=AdGuardHome
+
+[Service]
+ExecStart=%h/apps/AdGuardHome/AdGuardHome
+
+[Install]
+WantedBy=default.target
+

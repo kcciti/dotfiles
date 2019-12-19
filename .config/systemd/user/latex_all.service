@@ -1,0 +1,7 @@
+[Unit]
+Description=Compile all latex resume files
+
+[Service]
+Type=simple
+ExecStart=%h/Documents/resumes/latex_all.sh
+

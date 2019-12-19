@@ -1,4 +1,4 @@
-source /usr/share/defaults/etc/profile
+# source /usr/share/defaults/etc/profile
 export EDITOR='vim'
 export LANG="en_US.UTF-8"
 set editing-mode vi
@@ -11,6 +11,3 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias grep='grep -P --color=always'
 # source ~/.pyenv/bin/activate
 # tmux
-
-
-
