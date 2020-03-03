@@ -9,7 +9,8 @@
     "execute_time/ExecuteTime": true,
     "code_prettify/code_prettify": true,
     "toggle_all_line_numbers/main": true,
-    "varInspector/main": true
+    "varInspector/main": true,
+    "jupyter-js-widgets/extension": true
   },
   "varInspector": {
     "window_display": true
