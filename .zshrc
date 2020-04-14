@@ -97,3 +97,4 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 source ~/.venv/bin/activate
+export LD_LIBRARY_PATH="/usr/lib64/R/lib"
