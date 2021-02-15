@@ -81,6 +81,7 @@ let g:autopep8_aggressive=2
 let g:autopep8_disable_show_diff= 1
 
 autocmd FileType python map <buffer> <leader>f :call Autopep8()<CR>
+autocmd FileType julia setlocal foldmethod=syntax tabstop=4 shiftwidth=4
 
 " remap help files to quit with q
 autocmd FileType help noremap <buffer> q :q<cr>
@@ -90,3 +91,9 @@ autocmd FileType help noremap <buffer> q :q<cr>
 let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
+
+xmap <C-c>c <Plug>SlimeRegionSend
+nmap <C-c><C-c> <Plug>SlimeLineSend
+nmap <C-c>c <Plug>SlimeParagraphSend
+
+
