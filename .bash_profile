@@ -29,6 +29,6 @@ alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 #    tmux set-environment VIRTUAL_ENV $HOME/.pyenv
 #fi
 
-if [ -n "$VIRTUAL_ENV" ]; then
-    source $VIRTUAL_ENV/bin/activate;
-fi
+# if [ -n "$VIRTUAL_ENV" ]; then
+#     source $VIRTUAL_ENV/bin/activate;
+# fi
