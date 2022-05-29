@@ -48,9 +48,14 @@ export PATH=$HOME/.local/bin:$PATH
 eval "$(pyenv init --path)"
 
 # aliases
-alias nvim="toolbox run --container neovim nvim"
-alias R="toolbox run --container R R"
 
+if [[ -f /run/.containerenv && -f /run/.toolboxenv ]]; then
+else
+  alias nvim="toolbox run --container neovim nvim"
+  alias R="toolbox run --container R R"
+  alias rstudio="toolbox run --container R rstudio"
+  alias gnome-tweaks="toolbox run --container gnome-tools gnome-tweaks"
+fi
 
 
 
