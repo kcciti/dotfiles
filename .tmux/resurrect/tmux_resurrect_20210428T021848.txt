@@ -1,0 +1,6 @@
+pane	main	0	:julia	1	:*	0	:/home/kchuangk/Documents/ql	1	vim	:vim pricer.jl
+pane	main	0	:julia	1	:*	1	:/home/kchuangk/Documents/ql	0	julia	:/home/kchuangk/apps/julia-1.6.0/bin/julia
+pane	main	2	:vim	0	:-	0	:/home/kchuangk/Documents/ql	1	vim	:sudo su
+window	main	0	1	:*	a470,191x52,0,0{95x52,0,0,1,95x52,96,0,5}
+window	main	2	0	:-	b746,191x52,0,0,9
+state	main	
