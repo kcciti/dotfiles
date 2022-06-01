@@ -55,6 +55,7 @@ else
   alias R="toolbox run --container R R"
   alias rstudio="toolbox run --container R rstudio"
   alias gnome-tweaks="toolbox run --container gnome-tools gnome-tweaks"
+  alias pdflatex="toolbox run --container latex pdflatex"
 fi
 
 
