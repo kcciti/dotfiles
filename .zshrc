@@ -49,14 +49,16 @@ eval "$(pyenv init --path)"
 
 # aliases
 
-if [[ -f /run/.containerenv && -f /run/.toolboxenv ]]; then
-else
+# if [[ -f /run/.containerenv && -f /run/.toolboxenv ]]; then
+# else
   alias nvim="toolbox run --container nvim nvim"
   alias R="toolbox run --container R R"
   alias rstudio="toolbox run --container R rstudio"
   alias gnome-tweaks="toolbox run --container gnome-tools gnome-tweaks"
   alias pdflatex="toolbox run --container latex pdflatex"
-fi
+  alias borg='toolbox run --container borg export BORG_PASSWDCOMMAND="cat /home/kchuangk/.borg-passphrase" && /usr/bin/borg'
+  alias sshfs="toolbox run --container sshfs  sshfs"
+# fi
 
 
 
@@ -124,13 +126,13 @@ export BORG_PASSCOMMAND="cat $HOME/.borg-passphrase"
 
 if [[ -f /run/.containerenv && -f /run/.toolboxenv ]]; then
 else
-  if which tmux 2>&1 >/dev/null; then
-      if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
-         if [ -z "$TMUX" ]; then
-                 (tmux attach -t main || tmux new -s main); exit
-         fi
-      fi
-  fi
+if which tmux 2>&1 >/dev/null; then
+    if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
+       if [ -z "$TMUX" ]; then
+               (tmux attach -t main || tmux new -s main); exit
+       fi
+    fi
+fi
 fi
 
 # Use ~~ as the trigger sequence instead of the default **
