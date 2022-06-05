@@ -2,7 +2,7 @@ return {
   settings = {
     python = {
     venvPath =  "./" ,
-   venv = ".venv" ,
+    venv = ".venv" ,
     typeCheckingMode = "off"
     }}
 }

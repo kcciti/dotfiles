@@ -10,3 +10,4 @@ require "user.vim-slime"
 require "user.lualine"
 require "user.folding"
 require "user.bufferline"
+vim.cmd [[ highlight NormalFloat guibg=#222731 ]]

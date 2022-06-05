@@ -1,5 +1,8 @@
 -- vim.cmd [[ let $GIT_SSL_NO_VERIFY = 'true' ]]
 
+-- fix highlight
+
+
 local options = {
   backup = false,                          -- creates a backup file
   clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
@@ -62,3 +65,9 @@ vim.opt.wildignore:append "**/.venv/*"
 vim.opt.wildignore:append "**/__pycache__/*"
 vim.cmd [[ nnoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>" ]]
 vim.cmd [[ nnoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>" ]]
+
+-- set LSP highlights --
+-- shell --
+-- vim.cmd [[ set shell=/home/kchuangk/dev.sh ]]
+-- vim.cmd [[ command! Shell :set shell = toolbox\ enter\ dev ]]
+-- vim.cmd [[ let &shell='toolbox enter dev' ]]

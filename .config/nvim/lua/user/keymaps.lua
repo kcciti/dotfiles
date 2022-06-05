@@ -65,7 +65,8 @@ keymap("n","<leader>d","<cmd>Telescope lsp_document_symbols<cr>", opts)
 keymap("n","<leader>r","<cmd>Telescope oldfiles<cr>", opts)
 
 -- Auto-setup
-keymap("n","<leader>t","<cmd>vsplit term://zsh<CR>",opts) -- <cmd>tabnew term://zsh<CR> <cmd>tabprevious<CR> <cmd>wincmd h<cr>", opts)
+-- keymap("n","<leader>t","<cmd>vsplit term://zsh<CR>",opts) -- <cmd>tabnew term://zsh<CR> <cmd>tabprevious<CR> <cmd>wincmd h<cr>", opts)
+keymap("n","<leader>t","<cmd>vsplit term://toolbox enter dev<CR>",opts) -- <cmd>tabnew term://zsh<CR> <cmd>tabprevious<CR> <cmd>wincmd h<cr>", opts)
 keymap("n","go","<C-o>",opts)
 
 -- Insert --

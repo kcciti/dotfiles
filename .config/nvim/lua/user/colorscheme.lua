@@ -9,3 +9,4 @@
 
 -- hack to setup colorscheme for onehalf as it's setup weird
 vim.cmd [[ source ~/.local/share/nvim/site/pack/packer/start/onehalf/vim/colors/onehalfdark.vim ]]
+-- vim.cmd [[ source ~/onehaldark.vim ]]
