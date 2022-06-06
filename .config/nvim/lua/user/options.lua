@@ -66,6 +66,10 @@ vim.opt.wildignore:append "**/__pycache__/*"
 vim.cmd [[ nnoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>" ]]
 vim.cmd [[ nnoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>" ]]
 
+-- for autopep8 --
+vim.cmd [[ let g:autopep8_max_line_length=1000000 ]]
+vim.cmd [[ set wrap ]]
+
 -- set LSP highlights --
 -- shell --
 -- vim.cmd [[ set shell=/home/kchuangk/dev.sh ]]

@@ -33,6 +33,9 @@ keymap("n", "<leader>k", "<cmd>wincmd k<cr>", opts)
 keymap("n", "<leader>l", "<cmd>wincmd l<cr>", opts)
 keymap("n","<leader>x","<cmd>wincmd x<CR>", opts)
 
+-- Autopep 8 --
+keymap("n", "<leader>8", "<cmd>Autopep8<cr>",opts)
+
 -- NvimTreeToggle --
 keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts)
 

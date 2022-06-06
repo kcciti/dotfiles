@@ -97,8 +97,11 @@ return packer.startup(function(use)
         },
   }
 
+  -- autopep8
+  use { 'tell-k/vim-autopep8' }
+
   -- Bufferlines
-  use { 'akinsho/bufferline.nvim', 
+  use { 'akinsho/bufferline.nvim', tag= "v2.*",
         requires = {
           'kyazdani42/nvim-web-devicons',
         },
