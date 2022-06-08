@@ -107,7 +107,10 @@ return packer.startup(function(use)
         },
   }
 
-  use "jceb/vim-orgmode"
+  use {'nvim-orgmode/orgmode', config = function()
+        require('orgmode').setup_ts_grammar{}
+  end
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

@@ -56,8 +56,9 @@ eval "$(pyenv init --path)"
   alias rstudio="toolbox run --container R rstudio"
   alias gnome-tweaks="toolbox run --container gnome-tools gnome-tweaks"
   alias pdflatex="toolbox run --container latex pdflatex"
-  alias borg='toolbox run --container borg export BORG_PASSWDCOMMAND="cat /home/kchuangk/.borg-passphrase" && /usr/bin/borg'
+  # alias borg='toolbox run --container borg export BORG_PASSWDCOMMAND="cat /home/kchuangk/.borg-passphrase" && /usr/bin/borg'
   alias sshfs="toolbox run --container sshfs  sshfs"
+  alias openssl="toolbox run --container openssl openssl"
 # fi
 
 
