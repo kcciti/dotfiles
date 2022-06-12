@@ -70,6 +70,10 @@ vim.cmd [[ nnoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>" ]]
 vim.cmd [[ let g:autopep8_max_line_length=1000000 ]]
 vim.cmd [[ set wrap ]]
 
+-- orgmode
+vim.opt.conceallevel=2
+vim.opt.concealcursor='nc'
+
 -- set LSP highlights --
 -- shell --
 -- vim.cmd [[ set shell=/home/kchuangk/dev.sh ]]
