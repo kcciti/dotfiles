@@ -32,13 +32,13 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(python :variables
-            (python :variables
-                    python-poetry-activate t
-                    python-backend 'lsp
-                    python-lsp-server 'pyright
-                    python-formatter 'black
-                    python-auto-set-local-pyenv-version 'on-visit)
+   '(
+      (python :variables
+              python-poetry-activate t
+              python-backend 'lsp
+              python-lsp-server 'pyright
+              python-formatter 'black
+              python-auto-set-local-pyenv-version 'on-visit)
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -59,12 +59,12 @@ This function should only modify configuration layer settings."
      lsp
      ;; markdown
      multiple-cursors
-     ;; org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
+     org
+     (shell :variables
+            shell-default-height 30
+            shell-default-position 'bottom)
      ;; spell-checking
-     ;; syntax-checking
+     syntax-checking
      ;; version-control
      treemacs)
 
@@ -584,9 +584,11 @@ before packages are loaded."
   (define-key evil-normal-state-map (kbd "qs") 'evil-window-vsplit)
   (define-key evil-normal-state-map (kbd "qv") 'split-window-below)
   (define-key evil-normal-state-map (kbd "qD") 'ace-delete-window)
-  (eval-after-load 'python
-    '(setq python-shell-completion-native-disabled-interpreters
-           (delete "ipython" python-shell-completion-native-disabled-interpreters)))
+  ;; orgmode
+  (setq org-todo-keywords
+        '((sequence "TODO" "WORKING" "WAITING" "HOLD" "|" "DONE" "CANCELED" "ASSIGNED")))
+  (evil-define-key 'normal evil-org-mode-map (kbd "H") nil)
+  (evil-define-key 'normal evil-org-mode-map (kbd "H") 'org-shiftup)
 )
 
 
