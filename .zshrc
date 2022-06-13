@@ -59,6 +59,7 @@ eval "$(pyenv init --path)"
   # alias borg='toolbox run --container borg export BORG_PASSWDCOMMAND="cat /home/kchuangk/.borg-passphrase" && /usr/bin/borg'
   alias sshfs="toolbox run --container sshfs  sshfs"
   alias openssl="toolbox run --container openssl openssl"
+  alias emacs="toolbox run --container emacs emacs"
 # fi
 
 
