@@ -66,6 +66,7 @@ This function should only modify configuration layer settings."
      ;; spell-checking
      syntax-checking
      ;; version-control
+     theming
      treemacs)
 
 
@@ -557,6 +558,14 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
+  (setq theming-modifications
+        '(( spacemacs-dark
+           (org-level-1 :height 1.0)
+           (org-level-2 :height 1.0)
+           (org-level-3 :height 1.0)
+           (org-level-4 :height 1.0)
+           (org-level-5 :height 1.0)
+           (org-document-title :height 1.0))))
 )
 
 
@@ -584,20 +593,31 @@ before packages are loaded."
   (define-key evil-normal-state-map (kbd "qs") 'evil-window-vsplit)
   (define-key evil-normal-state-map (kbd "qv") 'split-window-below)
   (define-key evil-normal-state-map (kbd "qD") 'ace-delete-window)
+  ;; python-mode
+  (unbind-key (kbd "C-c C-c") python-mode-map)
+  (define-key python-mode-map (kbd "C-c C-c") 'spacemacs/python-shell-send-line)
+  (define-key python-mode-map (kbd "C-c SPC") 'spacemacs/python-shell-send-region)
   ;; orgmode
-  (setq org-todo-keywords
-        '((sequence "TODO" "WORKING" "WAITING" "HOLD" "|" "DONE" "CANCELED" "ASSIGNED")))
-  (evil-define-key 'normal evil-org-mode-map (kbd "H") nil)
-  (evil-define-key 'normal evil-org-mode-map (kbd "H") 'org-shiftup)
+  (evil-org-set-key-theme '(textobjects insert navigation additional shift todo heading))
   (with-eval-after-load 'org
     (setq org-directory "~/Dropbox/org")
     (setq org-agenda-files (list "~/Dropbox/org/"))
     (setq org-default-notes-file "~/Dropbox/org/refile.org")
+    (setq org-todo-keywords
+          '((sequence "TODO" "WORKING" "WAITING" "HOLD" "|" "DONE" "CANCELLED" "ASSIGNED")))
+    (setq org-todo-keyword-faces
+          '(("WORKING" . "CYAN")
+            ("WAITING" . "YELLOW")
+            ("HOLD" . "IVORY")
+            ("CANCELLED" . "DARKGREEN")
+            ("ASSIGNED" . "LIGHTGREEN")
+
+            ))
     )
   (setq org-capture-templates
         '(
-        ("j" "Journal" entry (file+datetree "~/Dropbox/org/notes.org")
-         "* %?\nEntered on %U\n  %i\n  %a")
+        ("n" "Note" entry (file+datetree "~/Dropbox/org/notes.org")
+         "* %?\nEntered on %U\n Q%i\n  %a")
         ("t" "Todo" entry (file+headline "~/Dropbox/org/gtd.org" "Tasks")
          "* TODO %?\n  %i\n  %a")
         ))
@@ -617,9 +637,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(evil-want-Y-yank-to-eol nil)
- '(org-agenda-files
-   '("~/Dropbox/org/schedule.org" "/var/home/kchuangk/Dropbox/org/papers.org"))
+ '(evil-want-Y-yank-to-eol nil) '(org-agenda-files '("~/Dropbox/org/schedule.org" "/var/home/kchuangk/Dropbox/org/papers.org"))
  '(package-selected-packages
    '(company-statistics company-quickhelp yasnippet-snippets lsp-ui lsp-origami origami helm-lsp helm-company helm-c-yasnippet fuzzy flycheck-pos-tip pos-tip auto-yasnippet yasnippet ac-ispell auto-complete yapfify stickyfunc-enhance sphinx-doc pytest pylookup pyenv-mode pydoc py-isort poetry transient pippel pipenv load-env-vars pyvenv pip-requirements nose lsp-python-ms lsp-pyright live-py-mode importmagic epc ctable concurrent deferred helm-pydoc helm-gtags helm-cscope xcscope ggtags dap-mode lsp-treemacs bui lsp-mode markdown-mode cython-mode counsel-gtags counsel swiper ivy company-anaconda company code-cells blacken anaconda-mode pythonic key-chord ws-butler writeroom-mode winum which-key volatile-highlights vim-powerline vi-tilde-fringe uuidgen use-package undo-tree treemacs-projectile treemacs-persp treemacs-icons-dired treemacs-evil toc-org symon symbol-overlay string-inflection string-edit spacemacs-whitespace-cleanup spacemacs-purpose-popwin spaceline-all-the-icons space-doc restart-emacs request rainbow-delimiters quickrun popwin pcre2el password-generator paradox overseer org-superstar open-junk-file nameless multi-line macrostep lorem-ipsum link-hint inspector info+ indent-guide hybrid-mode hungry-delete holy-mode hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-org helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio font-lock+ flycheck-package flycheck-elsa flx-ido fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-terminal-cursor-changer evil-surround evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-evilified-state evil-escape evil-ediff evil-easymotion evil-collection evil-cleverparens evil-args evil-anzu eval-sexp-fu emr elisp-slime-nav elisp-def editorconfig dumb-jump drag-stuff dotenv-mode dired-quick-sort diminish devdocs define-word column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-compile aggressive-indent ace-link ace-jump-helm-line)))
 (custom-set-faces
