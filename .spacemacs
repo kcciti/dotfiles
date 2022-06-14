@@ -589,6 +589,19 @@ before packages are loaded."
         '((sequence "TODO" "WORKING" "WAITING" "HOLD" "|" "DONE" "CANCELED" "ASSIGNED")))
   (evil-define-key 'normal evil-org-mode-map (kbd "H") nil)
   (evil-define-key 'normal evil-org-mode-map (kbd "H") 'org-shiftup)
+  (with-eval-after-load 'org
+    (setq org-directory "~/Dropbox/org")
+    (setq org-agenda-files (list "~/Dropbox/org/"))
+    (setq org-default-notes-file "~/Dropbox/org/refile.org")
+    )
+  (setq org-capture-templates
+        '(
+        ("j" "Journal" entry (file+datetree "~/Dropbox/org/notes.org")
+         "* %?\nEntered on %U\n  %i\n  %a")
+        ("t" "Todo" entry (file+headline "~/Dropbox/org/gtd.org" "Tasks")
+         "* TODO %?\n  %i\n  %a")
+        ))
+  (setq org-latex-create-formula-image-program 'dvipng)
 )
 
 
@@ -605,6 +618,8 @@ This function is called at the very end of Spacemacs initialization."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(evil-want-Y-yank-to-eol nil)
+ '(org-agenda-files
+   '("~/Dropbox/org/schedule.org" "/var/home/kchuangk/Dropbox/org/papers.org"))
  '(package-selected-packages
    '(company-statistics company-quickhelp yasnippet-snippets lsp-ui lsp-origami origami helm-lsp helm-company helm-c-yasnippet fuzzy flycheck-pos-tip pos-tip auto-yasnippet yasnippet ac-ispell auto-complete yapfify stickyfunc-enhance sphinx-doc pytest pylookup pyenv-mode pydoc py-isort poetry transient pippel pipenv load-env-vars pyvenv pip-requirements nose lsp-python-ms lsp-pyright live-py-mode importmagic epc ctable concurrent deferred helm-pydoc helm-gtags helm-cscope xcscope ggtags dap-mode lsp-treemacs bui lsp-mode markdown-mode cython-mode counsel-gtags counsel swiper ivy company-anaconda company code-cells blacken anaconda-mode pythonic key-chord ws-butler writeroom-mode winum which-key volatile-highlights vim-powerline vi-tilde-fringe uuidgen use-package undo-tree treemacs-projectile treemacs-persp treemacs-icons-dired treemacs-evil toc-org symon symbol-overlay string-inflection string-edit spacemacs-whitespace-cleanup spacemacs-purpose-popwin spaceline-all-the-icons space-doc restart-emacs request rainbow-delimiters quickrun popwin pcre2el password-generator paradox overseer org-superstar open-junk-file nameless multi-line macrostep lorem-ipsum link-hint inspector info+ indent-guide hybrid-mode hungry-delete holy-mode hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-org helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio font-lock+ flycheck-package flycheck-elsa flx-ido fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-terminal-cursor-changer evil-surround evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-evilified-state evil-escape evil-ediff evil-easymotion evil-collection evil-cleverparens evil-args evil-anzu eval-sexp-fu emr elisp-slime-nav elisp-def editorconfig dumb-jump drag-stuff dotenv-mode dired-quick-sort diminish devdocs define-word column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-compile aggressive-indent ace-link ace-jump-helm-line)))
 (custom-set-faces
