@@ -594,11 +594,12 @@ before packages are loaded."
   (define-key evil-normal-state-map (kbd "qv") 'split-window-below)
   (define-key evil-normal-state-map (kbd "qD") 'ace-delete-window)
   ;; python-mode
-  (unbind-key (kbd "C-c C-c") python-mode-map)
-  (define-key python-mode-map (kbd "C-c C-c") 'spacemacs/python-shell-send-line)
-  (define-key python-mode-map (kbd "C-c SPC") 'spacemacs/python-shell-send-region)
+  (with-eval-after-load 'python
+    (unbind-key (kbd "C-c C-c") 'python-mode-map)
+    (define-key python-mode-map (kbd "C-c C-c") 'spacemacs/python-shell-send-line)
+    (define-key python-mode-map (kbd "C-c SPC") 'spacemacs/python-shell-send-region)
+    )
   ;; orgmode
-  (evil-org-set-key-theme '(textobjects insert navigation additional shift todo heading))
   (with-eval-after-load 'org
     (setq org-directory "~/Dropbox/org")
     (setq org-agenda-files (list "~/Dropbox/org/"))
@@ -611,9 +612,16 @@ before packages are loaded."
             ("HOLD" . "IVORY")
             ("CANCELLED" . "DARKGREEN")
             ("ASSIGNED" . "LIGHTGREEN")
-
             ))
     )
+  (use-package evil-org
+    :ensure t
+    :after org
+    :hook (org-mode . (lambda () evil-org-mode))
+    :config
+    (evil-org-set-key-theme '(textobjects insert navigation additional shift todo heading))
+    (require 'evil-org-agenda)
+    (evil-org-agenda-set-keys))
   (setq org-capture-templates
         '(
         ("n" "Note" entry (file+datetree "~/Dropbox/org/notes.org")
