@@ -11,4 +11,5 @@ require "user.lualine"
 require "user.folding"
 require "user.bufferline"
 require "user.orgmode"
+require "user.nvim-tree"
 vim.cmd [[ highlight NormalFloat guibg=#222731 ]]

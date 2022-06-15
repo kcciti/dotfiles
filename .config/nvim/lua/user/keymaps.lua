@@ -5,10 +5,62 @@ local term_opts = { silent = true }
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
--- Remap macro command
-keymap("n", "<S-m>", "q", opts)
--- Remap space as leader key
-keymap("", "q", "<Nop>", opts)
+keymap("n","q","<Nop>", opts)
+
+-- disable all macro recording keys except 1-0 for macro recording
+keymap("n","qa","<Nop>", opts)
+keymap("n","qb","<Nop>", opts)
+keymap("n","qc","<Nop>", opts)
+keymap("n","qd","<Nop>", opts)
+keymap("n","qd","<Nop>", opts)
+keymap("n","qe","<Nop>", opts)
+keymap("n","qf","<Nop>", opts)
+keymap("n","qg","<Nop>", opts)
+keymap("n","qh","<Nop>", opts)
+keymap("n","qi","<Nop>", opts)
+keymap("n","qj","<Nop>", opts)
+keymap("n","qk","<Nop>", opts)
+keymap("n","ql","<Nop>", opts)
+keymap("n","qm","<Nop>", opts)
+keymap("n","qn","<Nop>", opts)
+keymap("n","qo","<Nop>", opts)
+keymap("n","qp","<Nop>", opts)
+keymap("n","qq","<Nop>", opts)
+keymap("n","qr","<Nop>", opts)
+keymap("n","qs","<Nop>", opts)
+keymap("n","qt","<Nop>", opts)
+keymap("n","qu","<Nop>", opts)
+keymap("n","qv","<Nop>", opts)
+keymap("n","qx","<Nop>", opts)
+keymap("n","qy","<Nop>", opts)
+keymap("n","qz","<Nop>", opts)
+keymap("n","qA","<Nop>", opts)
+keymap("n","qB","<Nop>", opts)
+keymap("n","qC","<Nop>", opts)
+keymap("n","qD","<Nop>", opts)
+keymap("n","qD","<Nop>", opts)
+keymap("n","qE","<Nop>", opts)
+keymap("n","qF","<Nop>", opts)
+keymap("n","qG","<Nop>", opts)
+keymap("n","qH","<Nop>", opts)
+keymap("n","qI","<Nop>", opts)
+keymap("n","qJ","<Nop>", opts)
+keymap("n","qK","<Nop>", opts)
+keymap("n","qL","<Nop>", opts)
+keymap("n","qM","<Nop>", opts)
+keymap("n","qN","<Nop>", opts)
+keymap("n","qO","<Nop>", opts)
+keymap("n","qP","<Nop>", opts)
+keymap("n","qQ","<Nop>", opts)
+keymap("n","qR","<Nop>", opts)
+keymap("n","qS","<Nop>", opts)
+keymap("n","qT","<Nop>", opts)
+keymap("n","qU","<Nop>", opts)
+keymap("n","qV","<Nop>", opts)
+keymap("n","qX","<Nop>", opts)
+keymap("n","qY","<Nop>", opts)
+keymap("n","qZ","<Nop>", opts)
+
 vim.g.mapleader = "q"
 vim.g.maplocalleader = "q"
 
@@ -94,8 +146,16 @@ keymap("x", "<leader><S-k>", "<cmd>move '<-2<CR>gv-gv", opts)
 -- Terminal --
 -- Better terminal navigation
 keymap("t", "qq", "<C-\\><C-n>", opts)
-keymap("t", "qh", "<C-\\><C-n><C-w>h", term_opts)
-keymap("t", "qj", "<C-\\><C-n><C-w>j", term_opts)
-keymap("t", "qk", "<C-\\><C-n><C-w>k", term_opts)
-keymap("t", "ql", "<C-\\><C-n><C-w>l", term_opts)
+keymap("t", "gh", "<C-\\><C-n><C-w>h", term_opts)
+keymap("t", "gj", "<C-\\><C-n><C-w>j", term_opts)
+keymap("t", "gk", "<C-\\><C-n><C-w>k", term_opts)
+keymap("t", "gl", "<C-\\><C-n><C-w>l", term_opts)
+
+
+-- Better normal_mode navigation
+-- keymap("n", "qh", "<C-\\><C-n><C-w>h", opts)
+-- keymap("n", "qj", "<C-\\><C-n><C-w>j", opts)
+-- keymap("n", "qk", "<C-\\><C-n><C-w>k", opts)
+-- keymap("n", "ql", "<C-\\><C-n><C-w>l", opts)
+
 

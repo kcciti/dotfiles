@@ -75,6 +75,7 @@ return packer.startup(function(use)
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
+    config = function() require'nvim-treesitter'.setup{} end
   }
   use "p00f/nvim-ts-rainbow"
   -- use "nvim-treesitter/playground"
@@ -84,7 +85,7 @@ return packer.startup(function(use)
       requires = {
         'kyazdani42/nvim-web-devicons', -- optional, for file icon
       },
-      config = function() require'nvim-tree'.setup {} end
+     --  config = function() require'nvim-tree'.setup {} end
   }
 
   -- Vim-slime
@@ -107,9 +108,28 @@ return packer.startup(function(use)
         },
   }
 
-  use {'nvim-orgmode/orgmode', config = function()
-        require('orgmode').setup_ts_grammar{}
-  end
+  use {'nvim-orgmode/orgmode',
+        config = function() 
+          require('orgmode').setup{}
+          require('orgmode').setup_ts_grammar{}
+        end
+      }
+
+  -- use {'nvim-orgmode/orgmode',
+  --     ft = {'org'},
+  --     config = function()
+  --             require('orgmode').setup{}
+  --     end
+  --     }
+
+  use { "folke/which-key.nvim",
+    config = function()
+      require("which-key").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
   }
 
   -- Automatically set up your configuration after cloning packer.nvim

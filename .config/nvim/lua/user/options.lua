@@ -74,8 +74,18 @@ vim.cmd [[ set wrap ]]
 vim.opt.conceallevel=2
 vim.opt.concealcursor='nc'
 
+-- relative number
+vim.cmd [[ set number relativenumber ]]
+vim.cmd [[ set nu rnu ]]
+
+
+
 -- set LSP highlights --
 -- shell --
 -- vim.cmd [[ set shell=/home/kchuangk/dev.sh ]]
 -- vim.cmd [[ command! Shell :set shell = toolbox\ enter\ dev ]]
 -- vim.cmd [[ let &shell='toolbox enter dev' ]]
+--
+-- remap record macros key --
+vim.cmd [[ nnoremap  q <Nop> ]]
+
