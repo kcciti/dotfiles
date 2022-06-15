@@ -151,6 +151,8 @@ keymap("t", "gj", "<C-\\><C-n><C-w>j", term_opts)
 keymap("t", "gk", "<C-\\><C-n><C-w>k", term_opts)
 keymap("t", "gl", "<C-\\><C-n><C-w>l", term_opts)
 
+-- Nvim-Tree --
+keymap("n", "<leader>n","<cmd>NvimTreeToggle<CR>", opts)
 
 -- Better normal_mode navigation
 -- keymap("n", "qh", "<C-\\><C-n><C-w>h", opts)
