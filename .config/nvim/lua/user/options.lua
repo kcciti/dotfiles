@@ -70,16 +70,17 @@ vim.cmd [[ nnoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>" ]]
 vim.cmd [[ let g:autopep8_max_line_length=1000000 ]]
 vim.cmd [[ set wrap ]]
 
--- orgmode
-vim.opt.conceallevel=2
+-- orgmode --
+vim.opt.conceallevel=1
 vim.opt.concealcursor='nc'
 
--- relative number
+-- relative number --
 vim.cmd [[ set number relativenumber ]]
 vim.cmd [[ set nu rnu ]]
 
-
-
+-- setup folding --
+vim.o.foldmethod = 'expr'
+vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
 -- set LSP highlights --
 -- shell --
 -- vim.cmd [[ set shell=/home/kchuangk/dev.sh ]]
@@ -87,5 +88,5 @@ vim.cmd [[ set nu rnu ]]
 -- vim.cmd [[ let &shell='toolbox enter dev' ]]
 --
 -- remap record macros key --
-vim.cmd [[ nnoremap  q <Nop> ]]
+-- vim.cmd [[ nnoremap  q <Nop> ]]
 

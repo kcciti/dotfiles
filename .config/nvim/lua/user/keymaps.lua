@@ -5,7 +5,7 @@ local term_opts = { silent = true }
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
-keymap("n","q","<Nop>", opts)
+-- keymap("n","q","<Nop>", opts)
 
 -- disable all macro recording keys except 1-0 for macro recording
 keymap("n","qa","<Nop>", opts)

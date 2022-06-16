@@ -60,6 +60,7 @@ eval "$(pyenv init --path)"
   alias sshfs="toolbox run --container sshfs  sshfs"
   alias openssl="toolbox run --container openssl openssl"
   alias emacs="toolbox run --container emacs emacs"
+  alias reptyr="toolbox run --container reptyr reptyr"
 # fi
 
 

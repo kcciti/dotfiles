@@ -3,7 +3,7 @@ require('orgmode').setup_ts_grammar()
 require('orgmode').setup({
   -- org_agenda_files = {'~/Dropbox/org/*', '~/my-orgs/**/*'},
   org_agenda_files = {'~/Dropbox/org/*'},
-  org_default_notes_file = '~/Dropbox/orgs/refile.org',
+  org_default_notes_file = '~/Dropbox/org/refile.org',
   org_todo_keywords = {'TODO', 'WAITING', 'WORKING', 'HOLD', '|', 'DONE', 'CANCELLED','ASSIGNED'},
   win_split_mode = "auto",
   org_agenda_span = 14,
@@ -23,6 +23,22 @@ require('orgmode').setup({
   mappings = {
     org = {
       org_todo='t',
+    },
+    capture = {
+      org_capture_finalize = '<Leader>w',
+      org_capture_refile = 'R',
+      org_capture_kill = 'Q',
     }
+  },
+  org_capture_templates = { 
+    t = {
+      description = 'Todo',
+      template = '* TODO %?\n  %a\n  %U',
+    },
+    n = {
+      description = 'Note',
+      template = '* %?\n  %U',
+    } 
   }
 })
+
