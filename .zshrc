@@ -61,6 +61,8 @@ eval "$(pyenv init --path)"
   alias openssl="toolbox run --container openssl openssl"
   alias emacs="toolbox run --container emacs emacs"
   alias reptyr="toolbox run --container reptyr reptyr"
+  alias youtube-dl="toolbox run --container youtube-dl youtube-dl"
+  alias yt-dlp="toolbox run --container youtube-dl yt-dlp"
 # fi
 
 
