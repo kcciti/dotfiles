@@ -146,10 +146,10 @@ keymap("x", "<leader><S-k>", "<cmd>move '<-2<CR>gv-gv", opts)
 -- Terminal --
 -- Better terminal navigation
 keymap("t", "qq", "<C-\\><C-n>", opts)
-keymap("t", "gh", "<C-\\><C-n><C-w>h", term_opts)
-keymap("t", "gj", "<C-\\><C-n><C-w>j", term_opts)
-keymap("t", "gk", "<C-\\><C-n><C-w>k", term_opts)
-keymap("t", "gl", "<C-\\><C-n><C-w>l", term_opts)
+keymap("t", "qh", "<C-\\><C-n><C-w>h", term_opts)
+keymap("t", "qj", "<C-\\><C-n><C-w>j", term_opts)
+keymap("t", "qk", "<C-\\><C-n><C-w>k", term_opts)
+keymap("t", "ql", "<C-\\><C-n><C-w>l", term_opts)
 
 -- Nvim-Tree --
 keymap("n", "<leader>n","<cmd>NvimTreeToggle<CR>", opts)
