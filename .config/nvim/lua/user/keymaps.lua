@@ -84,6 +84,12 @@ keymap("n", "<leader>j", "<cmd>wincmd j<cr>", opts)
 keymap("n", "<leader>k", "<cmd>wincmd k<cr>", opts)
 keymap("n", "<leader>l", "<cmd>wincmd l<cr>", opts)
 keymap("n","<leader>x","<cmd>wincmd x<CR>", opts)
+-- keymap("n", "<C-h>", "<cmd>wincmd h<cr>", opts)
+-- keymap("n", "<C-j>", "<cmd>wincmd j<cr>", opts)
+-- keymap("n", "<C-k>", "<cmd>wincmd k<cr>", opts)
+-- keymap("n", "<C-l>", "<cmd>wincmd l<cr>", opts)
+-- keymap("n","<C-x>","<cmd>wincmd x<CR>", opts)
+
 
 -- Autopep 8 --
 keymap("n", "<leader>8", "<cmd>Autopep8<cr>",opts)
@@ -150,6 +156,10 @@ keymap("t", "qh", "<C-\\><C-n><C-w>h", term_opts)
 keymap("t", "qj", "<C-\\><C-n><C-w>j", term_opts)
 keymap("t", "qk", "<C-\\><C-n><C-w>k", term_opts)
 keymap("t", "ql", "<C-\\><C-n><C-w>l", term_opts)
+keymap("t", "<C-h>", "<C-\\><C-n><C-w>h", term_opts)
+keymap("t", "<C-j>", "<C-\\><C-n><C-w>j", term_opts)
+keymap("t", "<C-k>", "<C-\\><C-n><C-w>k", term_opts)
+keymap("t", "<C-l>", "<C-\\><C-n><C-w>l", term_opts)
 
 -- Nvim-Tree --
 keymap("n", "<leader>n","<cmd>NvimTreeToggle<CR>", opts)
