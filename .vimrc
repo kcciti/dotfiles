@@ -1,3 +1,5 @@
+set nocompatible
+
 " VimPlug
 "
 " let $GIT_SSL_NO_VERIFY = 'true'
@@ -107,9 +109,12 @@ xmap <C-c>c <Plug>SlimeRegionSend
 nmap <C-c><C-c> <Plug>SlimeLineSend
 nmap <C-c>c <Plug>SlimeParagraphSend
 
-let mapleader = "`"
+nnoremap q <Nop>
+inoremap qq <ESC>
+let mapleader = "q"
 nnoremap <leader> <C-w>
 noremap <leader>s :vsplit<CR>
+" noremap qqs :vsplit<CR>
 noremap <leader>v :split<CR>
 noremap <leader>t :vert term zsh<CR>
 
